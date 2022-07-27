@@ -9,85 +9,160 @@
     <script src="script.js" defer></script>
   </head>
   <body>
-    <!-- Div for the side nav -->
     <div class="main">
+      <!-- Div for the side nav -->
       <div class="sideNav">
         <div class="logo">
           <img src="Logos/363.svg" alt="logo Image" />
-          <h1>CompanyX</h1>
+          <h1 class="noDisplay">CompanyX</h1>
         </div>
-        <div class="ul1">
+        <div class="ul1 noDisplay">
           <ul class="mainUl">
-            <li class="home"><a href=""><img src="Logos/home.svg" alt="" /> Home</a></li>
+            <li class="home">
+              <a href=""><img src="Logos/home.svg" alt="" /> Home</a>
+            </li>
 
-            <li class="profile"><a href=""><img src="Logos/profile.svg" alt="" /> Profile</a></li>
+            <li class="profile">
+              <a href=""><img src="Logos/profile.svg" alt="" /> Profile</a>
+            </li>
 
-            <li class="messages"><a href=""><img src="Logos/messages.svg" alt="" /> Messages</a></li>
+            <li class="messages">
+              <a href=""><img src="Logos/messages.svg" alt="" /> Messages</a>
+            </li>
 
-            <li class="history"><a href=""><img src="Logos/history.svg" alt="" /> History</a></li>
+            <li class="history">
+              <a href=""><img src="Logos/history.svg" alt="" /> History</a>
+            </li>
 
-            <li class="tasks"><a href=""><img src="Logos/tasks.svg" alt="" /> Tasks</a></li>
+            <li class="tasks">
+              <a href=""><img src="Logos/tasks.svg" alt="" /> Tasks</a>
+            </li>
 
-            <li class="communities"><a href=""><img src="Logos/communities.svg" alt="" /> Communities</a></li>
+            <li class="communities">
+              <a href=""
+                ><img src="Logos/communities.svg" alt="" /> Communities</a
+              >
+            </li>
           </ul>
         </div>
-        <div class="ul2">
+        <div class="ul2 noDisplay">
           <ul class="secondaryUl">
-            <li class="settings"><a href=""><img src="Logos/settings.svg" alt="" /> Settings</a></li>
-            <li class="support"><a href=""><img src="Logos/support.svg" alt="" /> Support</a></li>
-            <li class="privacy"><a href=""><img src="Logos/privacy.svg" alt="" /> privacy</a></li>
+            <li class="settings">
+              <a href=""><img src="Logos/settings.svg" alt="" /> Settings</a>
+            </li>
+            <li class="support">
+              <a href=""><img src="Logos/support.svg" alt="" /> Support</a>
+            </li>
+            <li class="privacy">
+              <a href=""><img src="Logos/privacy.svg" alt="" /> Privacy</a>
+            </li>
           </ul>
         </div>
       </div>
-      <!-- Div for the main content of the page -->
-      <div class="content">
-        <!-- Div for the searchbar -->
-        <div class="searchbar">
-          <img src="#" alt="user logo" />
-          <input type="text" />
-        </div>
-        <!-- Div for the user logo/name -->
-        <div class="user">
-          <img src="#" alt="user logo" />
-        </div>
-        <!-- Div for the welcoming of the user -->
-        <div class="welcomeDiv">
-          <div class="userInfo">
-            <img src="#" alt="user logo" />
-            <p>Hi,there</p>
-            <h2>User name</h2>
+      <!-- Div for the main content of the page, 2nd flex container -->
+      <div class="mainPage">
+        <div class="searchAndWelcome">
+          <!-- Div for the searchbar -->
+          <div class="topSearchArea">
+            <div class="searchBar">
+              <img src="Logos/search.svg" alt="user logo" />
+              <input type="text" />
+            </div>
+            <!-- Div for the user logo/name -->
+            <div class="user">
+              <a href=""><img src="Logos/notification.svg" alt="" class="bell"></a>
+              <img src="Logos/iron-man.svg" alt="user logo" />
+              <h2>Zebaginas</h2>
+            </div>
           </div>
-          <!-- Div with a few buttons for the user -->
-          <div>
-            <button class="new"></button>
-            <button class="upload"></button>
-            <button class="share"></button>
-          </div>
-        </div>
-        <!-- Div for the projects of the user -->
-        <div class="projectDiv">
-          <h3>Your projects</h3>
-          <!-- Projects grid container-->
-          <div class="projects">
-            <div class="project1"></div>
-            <div class="project2"></div>
-            <div class="project3"></div>
-            <div class="project4"></div>
-            <div class="project5"></div>
-            <div class="project6"></div>
+          <!-- Div for the welcoming of the user -->
+          <div class="welcomeDiv">
+            <div class="userInfo">
+              <img src="Logos/iron-man.svg" alt="user logo" />
+              <div class="userInfoText">
+                <p>Hi,there</p>
+                <h2>Zebaginas</h2>
+              </div>
+            </div>
+            <!-- Div with a few buttons for the user -->
+            <div class="buttonsDiv">
+              <button class="new">New</button>
+              <button class="upload">Upload</button>
+              <button class="share">Share</button>
+            </div>
           </div>
         </div>
-        <!-- Div for the announcements -->
-        <div class="announcementsDiv">
-          <h3>Announcements</h3>
-          <!-- Announcements flex container-->
-          <div class="announcements"></div>
-        </div>
-        <!-- Div for the trending section -->
-        <div class="trendingDiv">
-          <h3>Trending</h3>
-          <!-- Trending flex container -->
-          <div class="trending"></div>
+        <div class="content">
+          <!-- Div for the projects of the user -->
+          <div class="projectDiv">
+            <h2>Your projects</h2>
+            <!-- Projects grid container-->
+            <div class="projects">
+              <div class="project1">
+                <h3>Easy Project 1</h3>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                   Delectus, molestiae? Fugiat molestias libero eos incidunt quod
+                   illum sint totam assumenda iusto molestiae. Dolorem doloremque 
+                   laboriosam deserunt nulla veritatis magni amet?</p>
+              </div>
+              <div class="project2">
+                <h3>Easy Project 2</h3>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                  Delectus, molestiae? Fugiat molestias libero eos incidunt quod
+                  illum sint totam assumenda iusto molestiae. Dolorem doloremque 
+                  laboriosam deserunt nulla veritatis magni amet?</p>
+              </div>
+              <div class="project3">
+                <h3>Easy Project 3</h3>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                  Delectus, molestiae? Fugiat molestias libero eos incidunt quod
+                  illum sint totam assumenda iusto molestiae. Dolorem doloremque 
+                  laboriosam deserunt nulla veritatis magni amet?</p>
+              </div>
+              <div class="project4">
+                <h3>Easy Project 4</h3>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                  Delectus, molestiae? Fugiat molestias libero eos incidunt quod
+                  illum sint totam assumenda iusto molestiae. Dolorem doloremque 
+                  laboriosam deserunt nulla veritatis magni amet?</p>
+              </div>
+              <div class="project5">
+                <h3>Easy Project 5</h3>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                  Delectus, molestiae? Fugiat molestias libero eos incidunt quod
+                  illum sint totam assumenda iusto molestiae. Dolorem doloremque 
+                  laboriosam deserunt nulla veritatis magni amet?</p>
+              </div>
+              <div class="project6">
+                <h3>Easy Project 6</h3>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                  Delectus, molestiae? Fugiat molestias libero eos incidunt quod
+                  illum sint totam assumenda iusto molestiae. Dolorem doloremque 
+                  laboriosam deserunt nulla veritatis magni amet?</p>
+              </div>    
+              <div class="project6">
+                <h3>Easy Project 6</h3>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                  Delectus, molestiae? Fugiat molestias libero eos incidunt quod
+                  illum sint totam assumenda iusto molestiae. Dolorem doloremque 
+                  laboriosam deserunt nulla veritatis magni amet?</p>
+              </div>    
+            </div>
+          </div>
+          <!-- Div for the announcements -->
+          <div class="sideContent">
+            <div class="announcementsDiv">
+              <h2>Announcements</h2>
+              <!-- Announcements flex container-->
+              <div class="announcements"></div>
+            </div>
+            <!-- Div for the trending section -->
+            <div class="trendingDiv">
+              <h2>Trending</h2>
+              <!-- Trending flex container -->
+              <div class="trending"></div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
