@@ -2,9 +2,10 @@ $dark: rgb(34, 40, 49);
 $grey: rgb(57, 62, 70);
 $blue: rgb(0, 173, 181);
 $white: rgb(238, 238, 238);
-$halfWhite: rgba(238, 238, 238, 0.5);
+$lightWhite: rgba(238, 238, 238, 0.219);
 $lightblue: rgba(0, 173, 181, 0.2);
 $backgroundblue: rgba(0, 173, 181, 0.05);
+$lightdark:rgba(34, 40, 49, 0.3);
 $username: "Zebaginas";
 *,
 *::before,
@@ -15,6 +16,10 @@ $username: "Zebaginas";
 }
 html {
   box-sizing: border-box;
+  font-family: "Roboto";
+}
+.minWidth{
+  min-width: 220px;
 }
 .noDisplay {
   display: none;
@@ -31,12 +36,25 @@ body {
     overflow-y: auto;
     overflow-x: hidden;
     background-color: $dark;
-    height: 100%;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     padding: 1%;
     gap: 2rem;
     color: $white;
+    &::-webkit-scrollbar {
+      width: 5px;        
+    }
+    &::-webkit-scrollbar-button:end{height: 10px; width:30%;}
+    &::-webkit-scrollbar-button:start{height: 10px; width:30%;}
+    &::-webkit-scrollbar-track {
+      background-color: rgba(0, 0, 0, 0.4);
+      border-radius: 10px;
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: #dfdfdf;
+      border-radius: 10px;
+    }
     .logo {
       display: flex;
       font-size: 0.9rem;
@@ -56,7 +74,7 @@ body {
         list-style: none;
       }
       li {
-        border-bottom: solid $halfWhite 0.5px;
+        border-bottom: solid $lightWhite 0.5px;
         margin-bottom: 15px;
         a {
           display: flex;
@@ -77,7 +95,7 @@ body {
       }
       font-size: 1.4rem;
       li {
-        border-bottom: solid $halfWhite 0.5px;
+        border-bottom: solid $lightWhite 0.5px;
         margin-bottom: 15px;
         a {
           display: flex;
@@ -96,7 +114,6 @@ body {
   .mainPage {
     width: 100%;
     height: 100vh;
-    outline: solid purple;
     .topSearchArea {
       display: flex;
       padding: 10px 3%;
@@ -125,7 +142,7 @@ body {
       }
     }
     .searchAndWelcome {
-      box-shadow: 0px 1px 10px;
+      box-shadow: 0px 0px 20px -2px $grey;
       .welcomeDiv {
         display: flex;
         padding: 20px 2.5%;
@@ -148,7 +165,6 @@ body {
         }
         .buttonsDiv {
           display: flex;
-
           margin: auto;
           flex-basis: 30%;
           justify-content: center;
@@ -162,33 +178,73 @@ body {
             color: $white;
             font-size: 1.3rem;
             font-weight: 600;
+            &:hover{
+              cursor: pointer;
+              border: solid 3px $dark;
+            }
           }
         }
       }
     }
     .content {
-      height: 70vh;
+      height: 80vh;
       overflow-y: hidden;
       display: flex;
       padding: 2%;
       column-gap: 40px;
       //   outline: solid orange;
       .projectDiv {
+
         flex-basis: 80%;
-        overflow-y: scroll;
+        height: 100%;
         .projects {
+          border-radius: 20px;
+          box-shadow: 5px 5px 10px 0px rgb(112, 112, 112) ;
+          max-height: 95%;
+          overflow-y: scroll;
           display: grid;
           grid-template-columns: repeat(2, 1fr);
           grid-template-rows: repeat(3, 1fr);
           gap: 30px;
           margin-top: 20px;
+          &::-webkit-scrollbar {
+            width: 5px;        
+          }
+          &::-webkit-scrollbar-button:end{height: 10px; width:30%;}
+          &::-webkit-scrollbar-button:start{height: 10px; width:30%;}
+          &::-webkit-scrollbar-track {
+            background-color: rgba(0, 0, 0, 0.4);
+            border-radius: 10px;
+          }
+          &::-webkit-scrollbar-thumb {
+            background-color: #dfdfdf;
+            border-radius: 10px;
+          }
           div {
             width: 90%;
             padding: 3%;
             min-height: 175px;
             border-radius: 20px;
-            border-left: $blue solid 10px;
+            border-left: $blue solid 8px;
             background-color: $backgroundblue;
+            box-shadow: 5px 5px 10px -5px rgb(112, 112, 112);
+            overflow-y: hidden;
+            &:hover{
+             overflow-y: auto;
+            &::-webkit-scrollbar {
+              width: 5px;        
+            }
+            &::-webkit-scrollbar-button:end{height: 10px; width:30%;}
+            &::-webkit-scrollbar-button:start{height: 10px; width:30%;}
+            &::-webkit-scrollbar-track {
+              background-color: rgba(0, 0, 0, 0.4);
+              border-radius: 10px;
+            }
+            &::-webkit-scrollbar-thumb {
+              background-color: #dfdfdf;
+              border-radius: 10px;
+            }
+          }
           }
         }
       }
@@ -210,7 +266,7 @@ body {
             flex-direction: column;
             gap: 10px;
             .underline{
-              border-bottom: solid grey 1px;
+              border-bottom: solid $lightdark 1px;
               p{margin-bottom: 10px;}
             }
           }
@@ -220,13 +276,34 @@ body {
           h2{
             margin-bottom: 5px;
           }
-          height: 100%;
-          .trending{   
-            height: 65%;   
-            overflow-y: scroll;      
+          height: 40%;
+          .trending{  
+            box-shadow: 5px 5px 10px -5px ;
+            border-radius: 20px; 
+            max-height: 88%;
+            overflow-y: auto;      
             display: flex;
             flex-direction: column;
             gap: 10px;
+            padding: 5%;
+            &::-webkit-scrollbar {
+              width: 5px;        
+            }
+            &::-webkit-scrollbar-button:end{height: 10px; width:30%;}
+            &::-webkit-scrollbar-button:start{height: 10px; width:30%;}
+            &::-webkit-scrollbar-track {
+              background-color: rgba(0, 0, 0, 0.4);
+              border-radius: 10px;
+            }
+            &::-webkit-scrollbar-thumb {
+              background-color: #dfdfdf;
+              border-radius: 10px;
+            }
+            .trendDiv{
+              display: flex;
+              align-items: center;
+              column-gap: 20px;
+            }
 
           }
         }
