@@ -10,6 +10,10 @@ html {
   box-sizing: border-box;
 }
 
+.noDisplay {
+  display: none;
+}
+
 body {
   height: 100vh;
 }
@@ -166,7 +170,6 @@ body {
 .main .mainPage .content {
   height: 70vh;
   overflow-y: hidden;
-  outline: solid green;
   display: flex;
   padding: 2%;
   -moz-column-gap: 40px;
@@ -195,14 +198,39 @@ body {
   flex-basis: 20%;
   display: flex;
   flex-direction: column;
+  row-gap: 20px;
 }
 .main .mainPage .content .sideContent .announcementsDiv {
   flex-basis: 50%;
 }
+.main .mainPage .content .sideContent .announcementsDiv h2 {
+  margin-bottom: 5px;
+}
+.main .mainPage .content .sideContent .announcementsDiv .announcements {
+  border-radius: 20px;
+  box-shadow: 5px 5px 10px -5px rgb(112, 112, 112);
+  padding: 5%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.main .mainPage .content .sideContent .announcementsDiv .announcements .underline {
+  border-bottom: solid grey 1px;
+}
+.main .mainPage .content .sideContent .announcementsDiv .announcements .underline p {
+  margin-bottom: 10px;
+}
 .main .mainPage .content .sideContent .trendingDiv {
   flex-basis: 50%;
+  height: 100%;
 }
-
-.noDisplay {
-  display: none;
+.main .mainPage .content .sideContent .trendingDiv h2 {
+  margin-bottom: 5px;
+}
+.main .mainPage .content .sideContent .trendingDiv .trending {
+  height: 65%;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }/*# sourceMappingURL=styles.css.map */

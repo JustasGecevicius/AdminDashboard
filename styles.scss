@@ -16,6 +16,9 @@ $username: "Zebaginas";
 html {
   box-sizing: border-box;
 }
+.noDisplay {
+  display: none;
+}
 body {
   height: 100vh;
 }
@@ -166,7 +169,6 @@ body {
     .content {
       height: 70vh;
       overflow-y: hidden;
-      outline: solid green;
       display: flex;
       padding: 2%;
       column-gap: 40px;
@@ -194,16 +196,42 @@ body {
         flex-basis: 20%;
         display: flex;
         flex-direction: column;
+        row-gap: 20px;
         .announcementsDiv {
           flex-basis: 50%;
+          h2{
+            margin-bottom: 5px;
+          }
+          .announcements{
+            border-radius: 20px;
+            box-shadow: 5px 5px 10px -5px rgb(112, 112, 112);
+            padding: 5%;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            .underline{
+              border-bottom: solid grey 1px;
+              p{margin-bottom: 10px;}
+            }
+          }
         }
         .trendingDiv {
           flex-basis: 50%;
+          h2{
+            margin-bottom: 5px;
+          }
+          height: 100%;
+          .trending{   
+            height: 65%;   
+            overflow-y: scroll;      
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+          }
         }
       }
     }
   }
 }
-.noDisplay {
-  display: none;
-}
+
