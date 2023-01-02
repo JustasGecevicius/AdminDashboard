@@ -296,6 +296,11 @@ body {
 }
 
 @container mainContent (width < 750px) {
+  .searchAndWelcome {
+    max-height: -webkit-fit-content !important;
+    max-height: -moz-fit-content !important;
+    max-height: fit-content !important;
+  }
   .searchAndWelcome .buttonsDiv {
     flex-wrap: wrap !important;
   }

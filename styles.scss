@@ -298,6 +298,7 @@ body {
     .buttonsDiv{
       flex-wrap:wrap !important;
     }
+      max-height: fit-content !important;    
   }
   .welcomeDiv{
     flex-direction:column;
