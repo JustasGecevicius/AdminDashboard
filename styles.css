@@ -6,13 +6,28 @@
   box-sizing: border-box;
 }
 
-html {
-  box-sizing: border-box;
-  font-family: "Roboto";
+*::-webkit-scrollbar {
+  width: 5px;
+}
+*::-webkit-scrollbar-button:end {
+  height: 10px;
+  width: 30%;
+}
+*::-webkit-scrollbar-button:start {
+  height: 10px;
+  width: 30%;
+}
+*::-webkit-scrollbar-track {
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+}
+*::-webkit-scrollbar-thumb {
+  background-color: #dfdfdf;
+  border-radius: 10px;
 }
 
-.minWidth {
-  min-width: 220px;
+html {
+  font-family: "Roboto";
 }
 
 .noDisplay {
@@ -27,6 +42,7 @@ body {
   height: 100%;
   display: flex;
   background-color: rgb(238, 238, 238);
+  flex-direction: row;
 }
 .main .sideNav {
   overflow-y: auto;
@@ -38,25 +54,9 @@ body {
   padding: 1%;
   gap: 2rem;
   color: rgb(238, 238, 238);
-}
-.main .sideNav::-webkit-scrollbar {
-  width: 5px;
-}
-.main .sideNav::-webkit-scrollbar-button:end {
-  height: 10px;
-  width: 30%;
-}
-.main .sideNav::-webkit-scrollbar-button:start {
-  height: 10px;
-  width: 30%;
-}
-.main .sideNav::-webkit-scrollbar-track {
-  background-color: rgba(0, 0, 0, 0.4);
-  border-radius: 10px;
-}
-.main .sideNav::-webkit-scrollbar-thumb {
-  background-color: #dfdfdf;
-  border-radius: 10px;
+  min-width: -webkit-fit-content;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
 }
 .main .sideNav .logo {
   display: flex;
@@ -117,6 +117,7 @@ body {
   width: 2rem;
 }
 .main .mainPage {
+  container: mainContent/inline-size;
   width: 100%;
   height: 100vh;
 }
@@ -151,10 +152,15 @@ body {
 }
 .main .mainPage .searchAndWelcome {
   box-shadow: 0px 0px 20px -2px rgb(57, 62, 70);
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  max-height: 150px;
 }
 .main .mainPage .searchAndWelcome .welcomeDiv {
   display: flex;
-  padding: 20px 2.5%;
+  padding: 0px 2.5%;
+  padding-bottom: 10px;
 }
 .main .mainPage .searchAndWelcome .welcomeDiv .userInfo {
   display: flex;
@@ -174,6 +180,8 @@ body {
 }
 .main .mainPage .searchAndWelcome .welcomeDiv .buttonsDiv {
   display: flex;
+  flex-wrap: nowrap;
+  row-gap: 10px;
   margin: auto;
   flex-basis: 30%;
   justify-content: center;
@@ -195,12 +203,13 @@ body {
   border: solid 3px rgb(34, 40, 49);
 }
 .main .mainPage .content {
-  height: 80vh;
-  overflow-y: hidden;
+  max-height: calc(100vh - 150px);
+  overflow-y: auto;
   display: flex;
   padding: 2%;
   -moz-column-gap: 40px;
        column-gap: 40px;
+  padding-bottom: 4rem;
 }
 .main .mainPage .content .projectDiv {
   flex-basis: 80%;
@@ -209,35 +218,18 @@ body {
 .main .mainPage .content .projectDiv .projects {
   border-radius: 20px;
   box-shadow: 5px 5px 10px 0px rgb(112, 112, 112);
-  max-height: 95%;
-  overflow-y: scroll;
+  overflow-y: auto;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(3, 1fr);
-  gap: 30px;
+  gap: 20px;
   margin-top: 20px;
-}
-.main .mainPage .content .projectDiv .projects::-webkit-scrollbar {
-  width: 5px;
-}
-.main .mainPage .content .projectDiv .projects::-webkit-scrollbar-button:end {
-  height: 10px;
-  width: 30%;
-}
-.main .mainPage .content .projectDiv .projects::-webkit-scrollbar-button:start {
-  height: 10px;
-  width: 30%;
-}
-.main .mainPage .content .projectDiv .projects::-webkit-scrollbar-track {
-  background-color: rgba(0, 0, 0, 0.4);
-  border-radius: 10px;
-}
-.main .mainPage .content .projectDiv .projects::-webkit-scrollbar-thumb {
-  background-color: #dfdfdf;
-  border-radius: 10px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 .main .mainPage .content .projectDiv .projects div {
-  width: 90%;
+  width: 100%;
   padding: 3%;
   min-height: 175px;
   border-radius: 20px;
@@ -249,38 +241,23 @@ body {
 .main .mainPage .content .projectDiv .projects div:hover {
   overflow-y: auto;
 }
-.main .mainPage .content .projectDiv .projects div:hover::-webkit-scrollbar {
-  width: 5px;
-}
-.main .mainPage .content .projectDiv .projects div:hover::-webkit-scrollbar-button:end {
-  height: 10px;
-  width: 30%;
-}
-.main .mainPage .content .projectDiv .projects div:hover::-webkit-scrollbar-button:start {
-  height: 10px;
-  width: 30%;
-}
-.main .mainPage .content .projectDiv .projects div:hover::-webkit-scrollbar-track {
-  background-color: rgba(0, 0, 0, 0.4);
-  border-radius: 10px;
-}
-.main .mainPage .content .projectDiv .projects div:hover::-webkit-scrollbar-thumb {
-  background-color: #dfdfdf;
-  border-radius: 10px;
-}
 .main .mainPage .content .sideContent {
   flex-basis: 20%;
   display: flex;
   flex-direction: column;
   row-gap: 20px;
+  height: 100%;
 }
 .main .mainPage .content .sideContent .announcementsDiv {
-  flex-basis: 50%;
+  height: 50%;
 }
 .main .mainPage .content .sideContent .announcementsDiv h2 {
   margin-bottom: 5px;
+  height: 30px;
 }
 .main .mainPage .content .sideContent .announcementsDiv .announcements {
+  height: calc(100% - 35px);
+  overflow-y: auto;
   border-radius: 20px;
   box-shadow: 5px 5px 10px -5px rgb(112, 112, 112);
   padding: 5%;
@@ -295,44 +272,101 @@ body {
   margin-bottom: 10px;
 }
 .main .mainPage .content .sideContent .trendingDiv {
-  flex-basis: 50%;
-  height: 40%;
+  height: 50%;
 }
 .main .mainPage .content .sideContent .trendingDiv h2 {
   margin-bottom: 5px;
+  height: 30px;
 }
 .main .mainPage .content .sideContent .trendingDiv .trending {
   box-shadow: 5px 5px 10px -5px;
   border-radius: 20px;
-  max-height: 88%;
+  max-height: calc(100% - 30px);
   overflow-y: auto;
   display: flex;
   flex-direction: column;
   gap: 10px;
   padding: 5%;
 }
-.main .mainPage .content .sideContent .trendingDiv .trending::-webkit-scrollbar {
-  width: 5px;
-}
-.main .mainPage .content .sideContent .trendingDiv .trending::-webkit-scrollbar-button:end {
-  height: 10px;
-  width: 30%;
-}
-.main .mainPage .content .sideContent .trendingDiv .trending::-webkit-scrollbar-button:start {
-  height: 10px;
-  width: 30%;
-}
-.main .mainPage .content .sideContent .trendingDiv .trending::-webkit-scrollbar-track {
-  background-color: rgba(0, 0, 0, 0.4);
-  border-radius: 10px;
-}
-.main .mainPage .content .sideContent .trendingDiv .trending::-webkit-scrollbar-thumb {
-  background-color: #dfdfdf;
-  border-radius: 10px;
-}
 .main .mainPage .content .sideContent .trendingDiv .trending .trendDiv {
   display: flex;
   align-items: center;
   -moz-column-gap: 20px;
        column-gap: 20px;
-}/*# sourceMappingURL=styles.css.map */
+}
+
+@container mainContent (width < 750px) {
+  .searchAndWelcome .buttonsDiv {
+    flex-wrap: wrap !important;
+  }
+  .welcomeDiv {
+    flex-direction: column;
+    row-gap: 15px;
+  }
+  .projectDiv {
+    height: -webkit-fit-content !important;
+    height: -moz-fit-content !important;
+    height: fit-content !important;
+  }
+  .projectDiv .projects {
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+}
+@media screen and (max-width: 950px) {
+  .searchAndWelcome {
+    max-height: -webkit-fit-content !important;
+    max-height: -moz-fit-content !important;
+    max-height: fit-content !important;
+  }
+  .content {
+    display: flex;
+    flex-direction: column;
+  }
+  .content .projectDiv {
+    height: -webkit-fit-content !important;
+    height: -moz-fit-content !important;
+    height: fit-content !important;
+  }
+  .content .projectDiv .projects {
+    display: flex !important;
+    flex-direction: column;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+  .content .sideContent {
+    margin-top: 20px;
+    flex-direction: column !important;
+    -moz-column-gap: 30px;
+         column-gap: 30px;
+    height: -webkit-fit-content !important;
+    height: -moz-fit-content !important;
+    height: fit-content !important;
+  }
+  .sideContent {
+    margin-top: 20px;
+    flex-direction: row !important;
+    -moz-column-gap: 30px;
+         column-gap: 30px;
+  }
+  .announcementsDiv {
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    flex-basis: 50%;
+  }
+  .trendingDiv {
+    flex-basis: 50%;
+    height: -webkit-fit-content !important;
+    height: -moz-fit-content !important;
+    height: fit-content !important;
+  }
+  .trendingDiv .trending {
+    height: -webkit-fit-content !important;
+    height: -moz-fit-content !important;
+    height: fit-content !important;
+    max-height: none !important;
+  }
+}
